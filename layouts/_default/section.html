@@ -1,0 +1,15 @@
+{{ partial "header.html" . }}
+<main>
+    <div class="b-slide--main {{.Params.class_name}}">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+    </div>
+    {{ range sort .Paginator.Pages ".File.TranslationBaseName" }}
+        <div class="b-slide {{.Params.class_name}}">
+            <h2>{{.Title}}</h2>
+            {{.Content}}
+        </div>
+    {{ end }}
+</main>
+
+{{ partial "footer.html" . }}
