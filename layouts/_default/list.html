@@ -4,11 +4,11 @@
 <h1>{{ .Title }}</h1>
 {{ end }}
 
-<h2>{{ .Site.Params.myWelcomeMessage }}</h2>
+<h2 id="subtitle-welcome">{{ .Site.Params.myWelcomeMessage }}</h2>
 
 {{ .Content }}
 
-<ul>
+<ul id="post-list">
   {{ range (where .Data.Pages "Section" "!=" "") }}
   <li>
     <span class="date">{{ .Date.Format "2006/01/02" }}</span>
